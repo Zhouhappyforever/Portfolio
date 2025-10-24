@@ -43,5 +43,4 @@ After running the simulation with default inputs, pressure profiles evolve as fl
 For questions or collaborations, reach me at andrewmiller@utexas.edu.
 
 Andrew Z. Miller  
-Master's Student in Petroleum Engineering, UT Austin  
-LinkedIn: [Andrew Z. Miller](https://www.linkedin.com/in/andrew-z-miller)
+Master's Student in Petroleum Engineering, UT Austin
