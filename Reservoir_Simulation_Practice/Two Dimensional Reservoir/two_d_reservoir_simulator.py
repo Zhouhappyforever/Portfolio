@@ -195,7 +195,7 @@ class TwoDimReservoir():
                 T_left = 2 * self.k[i] * area / (self.mu * self.b_alpha * self.delta_x[0]) * conv
                 self.T[i, i] += T_left
                 self.Q[i] += T_left * p_left
-        elif left_bc['type'] = 'prescribed flux':
+        elif left_bc['type'] == 'prescribed flux':
             for iy in range(self.Ny):
                 i = iy * self.Nx
                 dy = self.delta_y[iy]
