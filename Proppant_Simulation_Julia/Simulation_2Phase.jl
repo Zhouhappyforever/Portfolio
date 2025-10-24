@@ -7,7 +7,6 @@ using Gridap.FESpaces
 using Gridap.MultiField
 using Gridap.ODEs
 using Gridap.CellData
-using Gridap.Visualization
 using Plots
 
 # Debugging: Check package import
@@ -28,7 +27,7 @@ mu_f = 0.001       # Fluid viscosity (Pa·s)
 g = 9.81           # Gravity (m/s²)
 theta = 0.0        # Inclination angle (radians, 0 for horizontal)
 d_part = 100e-6    # Particle diameter (m)
-a = 0.3            # Reduced coefficient for collision pressure to improve stability
+a = 3.0            # Coefficient for collision pressure
 C_vm = 0.5         # Virtual mass coefficient
 phi_max = 0.63     # Maximum packing fraction
 
@@ -38,7 +37,7 @@ bpress_const = 0.0 # Zero bpress for testing
 
 # Time stepping parameters
 T = 0.01           # Final time (s)
-num_steps = 100    # Increased for smaller dt to improve stability
+num_steps = 10     # Reduced for testing
 dt = T / num_steps # Time step size (s)
 
 # Initial and boundary conditions
@@ -47,7 +46,7 @@ v_p0 = 0.0         # Initial particle velocity (m/s)
 v_f0 = 0.1         # Initial fluid velocity (m/s)
 lam0 = 0.0         # Initial lambda
 
-phi_inlet = 0.1    # Inlet particle fraction
+phi_inlet = 0.5    # Inlet particle fraction
 vp_inlet = 0.1     # Inlet particle velocity (m/s)
 vf_inlet = 0.1     # Inlet fluid velocity (m/s)
 lam_outlet = 0.0   # Outlet lambda
@@ -76,21 +75,13 @@ function f_rep(phi::CellField)
 end
 
 # Drag coefficient (variable version; use drag_const for testing)
-function dp(phi::Number)
+function dp(phi)
   18 * mu_f / (d_part^2) * phi * f_rep(phi)
 end
 
-function dp(phi::CellField)
-  Operation(*)(18 * mu_f / (d_part^2), phi, f_rep(phi))
-end
-
 # Collision dispersive pressure (variable version; use bpress_const for testing)
-function bp(phi::Number, dvp_ds::Number)
+function bp(phi, dvp_ds)
   rho_p * (a^2) * (phi^3) * (dvp_ds^2)
-end
-
-function bp(phi::CellField, dvp_ds::CellField)
-  Operation(*)(rho_p, a^2, Operation(^)(phi, 3), Operation(^)(dvp_ds, 2))
 end
 
 # Sin theta (constant for horizontal pipe)
@@ -175,9 +166,9 @@ function res(t, xt, yt)
     dvp_t = ∂t(vp_t)
     dvf_t = ∂t(vf_t)
     phi_f = 1.0 - phi_t
-    drag = dp(phi_t)   # Variable drag
+    drag = drag_const   # Constant for testing
     dvp_ds = ∇(vp_t) ⋅ dir
-    bpress = bp(phi_t, dvp_ds)  # Variable bpress
+    bpress = bpress_const  # Zero for testing
     rel_vel = vf_t - vp_t
 
     # Scalar derivatives
@@ -317,10 +308,6 @@ if !isempty(all_solutions)
     # Save plot for inspection
     savefig("final_plot.png")
     println("Plot saved as final_plot.png")
-
-    # Export to VTK
-    writevtk(Omega, "final_solution.vtk", cellfields=["phi" => final_phi, "vp" => final_vp, "vf" => final_vf, "lam" => final_lam])
-    println("VTK file saved as final_solution.vtk")
 else
     println("Final solution not found for plotting because no time steps were collected.")
 end
