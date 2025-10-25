@@ -47,7 +47,7 @@ These experiences honed my skills in applying simulations to practical scenarios
 
 
 ## Additional Repositories
-- **Wellbore Simulation (Forked)**: Julia-based high-performance computing for wellbore modeling, adapted from PGE383-HPC. [Link](https://github.com/Zhouhappyforever/wellbore)
+- **Wellbore Simulation (Forked)**: Julia-based high-performance computing for wellbore modeling, adapted from PGE383-HPC, where I'm the TA for that course. [Link](https://github.com/Zhouhappyforever/wellbore)
 
 ## Contact
 - Email: andrewmiller@utexas.edu
