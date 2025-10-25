@@ -25,7 +25,7 @@ These projects build on my research assistant role at UT Austin, where I impleme
 ### 2. Two-Phase Proppant Flow Simulation in Hydraulic Fracturing
 This project (`Reservoir_Simulation_2Phase`) features a Julia-based numerical simulator for modeling proppant distribution in hydraulic fracturing operations. Using Gridap for finite element discretization, it solves coupled equations for particle and fluid phases, incorporating drag, collision pressure, and virtual mass effects.
 
-- **Key File**: [Simulation_2Phase.jl](Simulation_2Phase.jl) – Core code for the transient solver, weak form residuals, and visualization.
+- **Key File**: [Simulation_2Phase.jl](Proppant_Simulation_Julia/Simulation_2Phase.jl) – Core code for the transient solver, weak form residuals, and visualization.
 - **Simulation Results**: Includes plots of particle fraction (phi_p), velocities (v_p, v_f), and lambda at final time step. Example output:
   - Particle fraction stabilizes with inlet conditions propagating through the domain.
   - Velocities show phase interactions under gravity and drag forces.
