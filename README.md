@@ -36,7 +36,6 @@ Run the simulation: `julia Simulation_2Phase.jl` (requires Gridap, Plots package
 
 [View Folder](Reservoir_Simulation_2Phase/)
 
-![Simulation Plot](final_plot.png) <!-- Assuming the plot from the Julia file is saved and uploaded here -->
 
 ### 3. Field Experience in Hydraulic Fracturing and Team Projects
 To complement my simulation work, I've included photos from hands-on field experiences:
@@ -45,8 +44,7 @@ To complement my simulation work, I've included photos from hands-on field exper
 
 These experiences honed my skills in applying simulations to practical scenarios, such as optimizing fracture designs and ensuring HSE protocols in remote settings.
 
-![Field Operation 1](field_hydraulic_fracturing.jpg) <!-- Placeholder; upload actual images -->
-![Group Work](team_asme_lead.jpg) <!-- Placeholder; upload actual images -->
+
 
 ## Additional Repositories
 - **Wellbore Simulation (Forked)**: Julia-based high-performance computing for wellbore modeling, adapted from PGE383-HPC. [Link](https://github.com/Zhouhappyforever/wellbore)
@@ -54,6 +52,5 @@ These experiences honed my skills in applying simulations to practical scenarios
 ## Contact
 - Email: andrewmiller@utexas.edu
 - Phone: (512) 203-4555
-- LinkedIn: [Andrew Z. Miller](https://www.linkedin.com/in/andrew-z-miller) <!-- Assuming; add actual if available -->
 
 I'm eager to contribute to teams developing or applying advanced simulators for hydraulic fracturing and reservoir optimization. Feel free to reach out for collaborations or discussions!
