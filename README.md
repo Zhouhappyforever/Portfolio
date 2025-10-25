@@ -20,7 +20,7 @@ This folder (`Reservoir_Simulation_Practice`) contains interactive demonstration
 
 These projects build on my research assistant role at UT Austin, where I implemented C++ algorithms for reservoir simulations using mixed finite element methods.
 
-[View Folder](Reservoir_Simulation_Practice/)
+[View Folder](Reservoir_Simulation_Python/)
 
 ### 2. Two-Phase Proppant Flow Simulation in Hydraulic Fracturing
 This project (`Reservoir_Simulation_2Phase`) features a Julia-based numerical simulator for modeling proppant distribution in hydraulic fracturing operations. Using Gridap for finite element discretization, it solves coupled equations for particle and fluid phases, incorporating drag, collision pressure, and virtual mass effects.
@@ -34,7 +34,7 @@ This project (`Reservoir_Simulation_2Phase`) features a Julia-based numerical si
 
 Run the simulation: `julia Simulation_2Phase.jl` (requires Gridap, Plots packages).
 
-[View Folder](Reservoir_Simulation_2Phase/)
+[View Folder](Proppant_Simulation_Julia/)
 
 
 ### 3. Field Experience in Hydraulic Fracturing and Team Projects
